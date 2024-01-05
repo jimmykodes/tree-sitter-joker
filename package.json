@@ -28,7 +28,7 @@
       ],
       "first-line-regex": "#!.*\\bjoker$",
       "highlights": [
-        "highlights.scm"
+        "queries/highlights.scm"
       ]
     }
   ]

@@ -135,9 +135,11 @@ module.exports = grammar({
       field('operand', $._expression)
     )),
 
+    comment: _ => token(seq('#', /.*/)),
+
     binary_expression: $ => {
       const table = [
-        [PREC.multiplicative, choice('*', '/')],
+        [PREC.multiplicative, choice('*', '/', '%')],
         [PREC.additive, choice('+', '-')],
         [PREC.comparative, choice('<', '<=', '>', '>=', '==', '!=')],
         // [PREC.and, '&&'],

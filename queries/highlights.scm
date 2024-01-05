@@ -1,14 +1,16 @@
-(call_expression
-  function: (identifier) @function.builtin
-  (.match? @function.builtin "^(int|float|string|len|del|print|append|slice)$"))
+(identifier) @variable
 
 (call_expression
   function: (identifier) @function)
 
+(call_expression
+  function: (identifier) @function.builtin
+  (#match? @function.builtin "^(int|float|string|len|del|print|append|slice)$"))
+
 (function_definition
   name: (identifier) @function)
 
-(identifier) @variable
+(comment) @comment
 
 [
  "fn"
