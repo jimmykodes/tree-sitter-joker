@@ -1,0 +1,35 @@
+{
+  "name": "tree-sitter-joker",
+  "version": "1.0.0",
+  "description": "tree sitter for joker language",
+  "main": "bindings/node",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/jimmykodes/tree-sitter-joker"
+  },
+  "author": "jimmykodes",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.joker",
+      "file-types": [
+        "jk",
+        "joker"
+      ],
+      "first-line-regex": "#!.*\\bjoker$",
+      "highlights": [
+        "highlights.scm"
+      ]
+    }
+  ]
+}
