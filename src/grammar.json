@@ -319,6 +319,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "break_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "continue_statement"
+        },
+        {
+          "type": "SYMBOL",
           "name": "call_statement"
         }
       ]
@@ -490,6 +498,32 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "break_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "break"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "continue_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "continue"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },

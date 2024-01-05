@@ -19,6 +19,8 @@
  "while"
  "if"
  "else"
+ "break"
+ "continue"
 ] @keyword
 
 [

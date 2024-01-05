@@ -69,9 +69,10 @@ module.exports = grammar({
       $.assignment_statement,
       $.while_statement,
       $.if_statement,
+      $.break_statement,
+      $.continue_statement,
       $.call_statement,
     ),
-
 
     _expression: $ => choice(
       $.identifier,
@@ -115,6 +116,9 @@ module.exports = grammar({
         field('alternative', $.block),
       ))
     ),
+
+    break_statement: _ => seq("break", ";"),
+    continue_statement: _ => seq("continue", ";"),
 
     variable_definition: $ => choice(
       seq("let", $.identifier, "=", $._expression, ";"),
