@@ -198,7 +198,7 @@ module.exports = grammar({
       "]",
     ),
 
-    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]?/,
+    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]*/,
 
     integer: _ => token(/\d+/),
     float: _ => {
