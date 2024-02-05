@@ -241,6 +241,10 @@
                       },
                       {
                         "type": "STRING",
+                        "value": "set"
+                      },
+                      {
+                        "type": "STRING",
                         "value": "slice"
                       }
                     ]
@@ -312,6 +316,10 @@
         {
           "type": "SYMBOL",
           "name": "while_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_statement"
         },
         {
           "type": "SYMBOL",
@@ -423,6 +431,59 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "for_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "for"
+        },
+        {
+          "type": "FIELD",
+          "name": "init",
+          "content": {
+            "type": "SYMBOL",
+            "name": "variable_definition"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "FIELD",
+          "name": "increment",
+          "content": {
+            "type": "SYMBOL",
+            "name": "assignment_statement"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
+          }
         }
       ]
     },
@@ -1029,7 +1090,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-zA-Z_]+"
+      "value": "[a-zA-Z_][a-zA-Z0-9_]+"
     },
     "integer": {
       "type": "TOKEN",

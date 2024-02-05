@@ -9,7 +9,7 @@ const
     or: 1,
     composite_literal: -1,
   },
-  builtins = ["int", "float", "string", "len", "del", "print", "append", "slice"]
+  builtins = ["int", "float", "string", "len", "del", "print", "append", "set", "slice"]
 
 module.exports = grammar({
   name: "joker",
@@ -68,6 +68,7 @@ module.exports = grammar({
       $.return_statement,
       $.assignment_statement,
       $.while_statement,
+      $.for_statement,
       $.if_statement,
       $.break_statement,
       $.continue_statement,
@@ -99,6 +100,17 @@ module.exports = grammar({
       'return',
       $._expression,
       optional(';'),
+    ),
+
+    for_statement: $ => seq(
+      'for',
+      field('init', $.variable_definition),
+      ';',
+      field('condition', $._expression),
+      ';',
+      field('increment', $.assignment_statement),
+      ';',
+      field('body', $.block),
     ),
 
     while_statement: $ => seq(
@@ -186,7 +198,7 @@ module.exports = grammar({
       "]",
     ),
 
-    identifier: _ => /[a-zA-Z_]+/,
+    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]+/,
 
     integer: _ => token(/\d+/),
     float: _ => {

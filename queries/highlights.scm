@@ -5,7 +5,7 @@
 
 (call_expression
   function: (identifier) @function.builtin
-  (#match? @function.builtin "^(int|float|string|len|del|print|append|slice)$"))
+  (#match? @function.builtin "^(int|float|string|len|del|print|append|set|slice)$"))
 
 (function_definition
   name: (identifier) @function)
@@ -17,6 +17,7 @@
  "return"
  "let"
  "while"
+ "for"
  "if"
  "else"
  "break"
