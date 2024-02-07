@@ -246,6 +246,30 @@
                       {
                         "type": "STRING",
                         "value": "slice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "argv"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "open"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "close"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "read"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "readline"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "write"
                       }
                     ]
                   },

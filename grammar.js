@@ -9,7 +9,7 @@ const
     or: 1,
     composite_literal: -1,
   },
-  builtins = ["int", "float", "string", "len", "del", "print", "append", "set", "slice"]
+  builtins = ["int", "float", "string", "len", "del", "print", "append", "set", "slice", "argv", "open", "close", "read", "readline", "write"]
 
 module.exports = grammar({
   name: "joker",
